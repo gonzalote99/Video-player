@@ -1,23 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
+ <html>
+<head>
+ <title>media player</title>
+ <link rel="stylesheet" type="text/css" href="style.css">
+ <link rel="stylesheet" type="text/css" href="titlebearStyle.css">
+
+</head>
+<body>
+  <header id="titlebar">
+   <div id="drag-region">
+    <div id="window-title">
+     <span id="headTitle">video player</span>
+    </div>
+    <div id="window-controls">
+    <div class="button" id="min-button">
+    <img class="icon" srcset="https://raw.githubusercontent.com/HemantKumar01/ElectronMediaPlayer/main/res/min-w-30.png"  draggable="false" />
+    </div>
+    <div class="icon" id="max-button">
+      <img class="icon" srcset="https://raw.githubusercontent.com/HemantKumar01/ElectronMediaPlayer/main/res/max-w-30.png" draggable="false" />
+    </div>
+    <div class="icon" id="restore-button">
+    <img class="icon" srcset="https://raw.githubusercontent.com/HemantKumar01/ElectronMediaPlayer/main/res/restore-w-30.png" draggable="false" />
+    </div>
+    <div class="icon" id="close-button">
+    <img class="icon" srcset="https://raw.githubusercontent.com/HemantKumar01/ElectronMediaPlayer/main/res/close-w-30.png" draggable="false" />
+    </div>
+    </div>
+   </div>
+
+  </header>
+  <div class="holder" id="holder">
+   <video id="mainVideo" autoplay>lost error</video>
+   <img id="back5sImage" class="playGrow" src="https://raw.githubusercontent.com/HemantKumar01/ElectronMediaPlayer/main/res/back5s-w.png" />
+   <img id="playGrow" class="playGrow" src="https://raw.githubusercontent.com/HemantKumar01/ElectronMediaPlayer/main/res/play-w.png" />
+   <img id="front5sImage" class="playGrow" src="https://raw.githubusercontent.com/HemantKumar01/ElectronMediaPlayer/main/res/front5s-w.png" >
+   <div id="controlPane">
+    <center>
+     <button id="previous" type="button" onclick="changeVideo('previos')"><img id="previousImage" src="https://raw.githubusercontent.com/HemantKumar01/ElectronMediaPlayer/main/res/previous-w.png" height="17px" width="21px"></button>
+     <button id="back5sec" type="button" onclick="changeTime('back', 5)"><img id="back5simage" src="https://raw.githubusercontent.com/HemantKumar01/ElectronMediaPlayer/main/res/back5s-w.png" height="26px" width="35px" ></button>
+     <button id="playPause" type="button" onclick="playPause()"><img id="playImage" src="" 
+    </center>
+
+
+   </div>
+  </div>
+</body>
 </html>
