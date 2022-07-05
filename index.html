@@ -58,7 +58,7 @@
 
          >
          </iframe>  `;
-       //  prompt('here yoy embed: ', embed);
+        prompt('here yoy embed: ', embed);
          window.location.href = window.location.href+'?id='+eid;
 
        }
@@ -77,18 +77,55 @@
        frameborder="0" allow="accelerometer; autoplay; clipbord-write; encrypted-media; gyroscope; picture-in-picture; " allowfullscreen
        ></iframe>
        `;
-      // prompt('embed code:', code);
+      prompt('embed code:', code);
 
      }
      function getParameterByName(name, url = window.document.href) {
       name = name.replace(/[\[\]]/g, '\\$&');
-      var regex = new RegExp()
+      var regex = new RegExp('[?&]' + name + '(=([^?#]*)|$|#|$)'),
+       results = regex.exec(url);
+       if (!results) return null;
+       if (!resutls[2]) return '';
+       return decodeURIComponent(results[2].replace(/\+g/,''));
+
+      
      }
 
-
-     
-
       </script>
+      <script>
+       var myFP = fluidPlayer(
+         'video',     {
+           "layoutControls": {
+             "controlBar": {
+               "autoHideTimeOut": 3,
+               "animated": true,
+               "autoHide": true
+             },
+             "htmlOnPauseBlock": {
+               "html": '<button class=\"embed\" onclick="\getembed()\">embed</button>\n',
+               "height": null,
+               "width": null
+             },
+             "autoPlay": true,
+             "mute": true,
+             "allowTheatre": true,
+             "playPauseAnimation": true,
+             "playbackRateEnable": true,
+             "allowDownload": false,
+             "playButtonShowing": true,
+             "fillToContainer": false,
+             "posterImage": "",
+
+           },
+           "vastOptions": {
+             "adList": [],
+             "adCTAText": false,
+             "adCTATextPosition": ""
+           } 
+         }
+       )
+
+     </script>
   
 </body>
 </html>
